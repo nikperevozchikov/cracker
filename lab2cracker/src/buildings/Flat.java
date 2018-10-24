@@ -2,10 +2,11 @@ package buildings;
 
 public class Flat {
     private float space;
-    private int rooms;
+    private int rooms; //todo roomsСount более полно отражает суть
 
+    //todo не нужно доблировать код в конструкторах. Стандартное правило - конструктор с меньшим числом параметров вызывает конструктор с большим числом параметров
     public Flat() {
-        this.space = 50;
+        this.space = 50; //todo литералы в коде - отстой. Вынеси 50 и 2 в константы класса и дай им нормальные имена.
         this.rooms = 2;
     }
 
