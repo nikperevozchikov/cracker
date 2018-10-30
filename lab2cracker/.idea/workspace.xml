@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b24b3def-e06f-47f9-a995-840d5766e7b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab2cracker/buildings/Dwelling.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab2cracker/buildings/Dwelling.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab2cracker/buildings/DwellingFloor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab2cracker/buildings/DwellingFloor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab2cracker/buildings/Flat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab2cracker/buildings/Flat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab2cracker/buildings/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab2cracker/buildings/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buildings/Dwelling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buildings/Dwelling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buildings/DwellingFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buildings/DwellingFloor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buildings/Flat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buildings/Flat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/buildings/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buildings/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -66,12 +58,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1921" />
+          <entry key="java" value="1924" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1921" />
+          <entry key="JAVA" value="1924" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -112,8 +104,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/buildings/Dwelling.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2094">
-              <caret line="190" column="5" selection-start-line="190" selection-start-column="5" selection-end-line="190" selection-end-column="5" />
+            <state relative-caret-position="241">
+              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
             </state>
           </provider>
         </entry>
@@ -139,8 +131,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/buildings/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="128">
+              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -184,7 +176,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="961" />
     <option name="height" value="867" />
@@ -224,7 +216,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540928618087" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540928953881" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -291,12 +283,12 @@
       <workItem from="1540145885846" duration="140000" />
       <workItem from="1540487788917" duration="16377000" />
       <workItem from="1540731611035" duration="13136000" />
-      <workItem from="1540834888707" duration="15381000" />
+      <workItem from="1540834888707" duration="15738000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72510000" />
+    <option name="totallyTimeSpent" value="72867000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="961" height="867" extended-state="0" />
@@ -387,13 +379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/buildings/Dwelling.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2094">
-          <caret line="190" column="5" selection-start-line="190" selection-start-column="5" selection-end-line="190" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/buildings/Flat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -413,13 +398,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/buildings/DwellingFloor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="65" column="25" lean-forward="true" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/buildings/DwellingFloorFlatNumberDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -427,10 +405,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/buildings/DwellingFloor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="65" column="25" lean-forward="true" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/buildings/Dwelling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/buildings/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="128">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
         </state>
       </provider>
     </entry>

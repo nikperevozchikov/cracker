@@ -10,10 +10,10 @@ public class Main {
         flats[1] = new Flat();
         flats[2] = new Flat();
         flats[2].setSpace(190);
+
         DwellingFloor floor = new DwellingFloor(flats);
         floor.addFlat(0, new Flat());
         floor.addFlat(1, new Flat());
-
         System.out.println(floor.getSpace());
         System.out.println(floor.getCntRooms());
         Flat[] flatss = new Flat[3];
@@ -23,10 +23,10 @@ public class Main {
         DwellingFloor[] floors = new DwellingFloor[3];
         floors[0] = floor;
         floors[1] = floorr;
+
         Dwelling dwelling = new Dwelling(floors);
         dwelling.addFlat(5, new Flat(4, 160));
         dwelling.delFlat(3);
-
         System.out.println(dwelling.getAllFlatsCount());
         System.out.println(dwelling.getAllRooms());
         System.out.println(dwelling.getAllFlatsSpace());
@@ -39,7 +39,7 @@ public class Main {
         System.out.println(dwelling.getFlat(3));
         Flat[] flatsss = dwelling.getSortFlat();
         for (int i = 0; i < flatsss.length; i++)
-            System.out.println(i + ") " + flatsss[i]);
+            System.out.println(flatsss[i]);
 
          /*DwellingFloor[] floors = new DwellingFloor[10];
         for (int i = 0; i < floors.length; i++) {
