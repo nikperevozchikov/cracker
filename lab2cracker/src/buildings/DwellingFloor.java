@@ -2,92 +2,109 @@ package buildings;
 
 
 public class DwellingFloor {
-
+    private int size;
     private Flat flats[];
 
-    public DwellingFloor(int count)
-    {
-        flats = new Flat[count];
-        for(int i=0; i<count; i++)
-        {
-            flats[i] = new Flat();
+    public DwellingFloor(int size) {
+        flats = new Flat[size];
+
+    }
+
+    public DwellingFloor(Flat[] fla) {
+        flats = new Flat[fla.length];
+        for (int i = 0; i < fla.length; i++) {
+            if (fla[i] != null) {
+                flats[size] = fla[i];
+                size++;
+            }
         }
     }
 
-    public DwellingFloor(Flat[] flats)
+    public int getSize()                  //количество квартир на этаже
     {
-        this.flats = new Flat[flats.length];
-        for(int i=0; i<flats.length; i++)
-        {
-            this.flats[i]=flats[i];
-        }
+        return size;
     }
 
-    public int getCount()                  //количество квартир на этаже
-    {
-        return flats.length;
-    }
-
-    public float getSpace()					//общая площадь квартир этажа
+    public float getSpace()                    //общая площадь квартир этажа
     {
         float allspace = 0;
-        for (int i=0; i<flats.length; i++)
-        {
-            allspace+=flats[i].getSpace();
+        for (int i = 0; i < size; i++) {
+            allspace += flats[i].getSpace();
         }
         return allspace;
     }
 
-    public int getCntRooms()				//общее количество комнат этажа
+    public int getCntRooms()                //общее количество комнат этажа
     {
-        int allrooms = flats[0].getRooms();
-        for (int i=1; i<flats.length; i++)
-        {
-            allrooms+=flats[i].getRooms();
+        int allrooms = flats[0].getRoomsCount();
+        for (int i = 1; i < size; i++) {
+            allrooms += flats[i].getRoomsCount();
         }
         return allrooms;
     }
 
-    public Flat[] getFlats()				//метод получения массива квартир этажа
+    public Flat[] getFlats()                //метод получения массива квартир этажа
     {
         return flats;
     }
 
-    public Flat getFlat(int number)				//метод получения объекта квартиры по номеру на этаже
+    public Flat getFlat(int number)                //метод получения объекта квартиры по номеру на этаже
     {
         return flats[number];
     }
 
-    public void setFlat(int number, Flat flat)		//метод изменения квартиры по ее номеру на этаже
+    public void setFlat(int number, Flat flat)        //метод изменения квартиры по ее номеру на этаже
     {
-        this.flats[number] = flat;
+        flats[number] = flat;
     }
 
-    public void addFlat(int number, Flat flat)		//добавление новой  квартиры на этаже
+    private Flat[] doubleLengthFlats() {
+        Flat[] newmassiv = new Flat[flats.length * 2];
+        for (int i = 0; i < flats.length; i++) {
+            newmassiv[i] = flats[i];
+        }
+        return newmassiv;
+
+    }
+
+    public void addFlat(int number, Flat fFlat) {
+        if (number > 0 && number < size) {
+            if (size == flats.length) {
+                flats = doubleLengthFlats();
+            }
+            System.arraycopy(flats, number, flats, number + 1, size - number);
+            flats[number] = fFlat;
+            size++;
+        }
+    }
+    public void delFlat(int number) {
+        if ( number >= 0&& number < size) {
+            System.arraycopy(flats, number + 1, flats, number, size - number - 1);
+            size--;
+            flats[size] = null;
+        }
+    }
+
+   /* public void addFlat(int number, Flat flat)        //добавление новой  квартиры на этаже
     {
-        if(number>flats.length) {
-            Flat tmp[]= new Flat[number];
-            for(int i=0; i<flats.length; i++)
-            {
+        if (number > flats.length) {
+            Flat tmp[] = new Flat[number];
+            for (int i = 0; i < flats.length; i++) {
                 tmp[i] = new Flat();
             }
-            for(int i=0; i<flats.length; i++)
-            {
+            for (int i = 0; i < flats.length; i++) {
                 tmp[i] = flats[i];
             }
-            tmp[number-1] = flat;
+            tmp[number - 1] = flat;
             flats = tmp;
-        }
-        else
-        {
-            Flat tmp[]= new Flat[flats.length + 1];
-            if(number == 0) {
+        } else {
+            Flat tmp[] = new Flat[flats.length + 1];
+            if (number == 0) {
                 tmp[number] = flat;
                 for (int i = 0; i < flats.length; i++) {
-                    tmp[i+1] = flats[i];
+                    tmp[i + 1] = flats[i];
                 }
-            }
-            else {
+            } else {
                 for (int i = 0; i < number; i++) {
                     tmp[i] = flats[i];
                 }
@@ -98,35 +115,30 @@ public class DwellingFloor {
             }
             flats = tmp;
         }
-    }
+    }*/
 
-    public void delFlat(int number)			//удаление квартиры по номеру на этаже
+   /* public void delFlat(int number)            //удаление квартиры по номеру на этаже
     {
         Flat tmp[] = new Flat[flats.length - 1];
-        if(number==0)
-        {
-            for(int i = 0; i<flats.length-1; i++)
-            {
-                tmp[i]= flats[i+1];
+        if (number == 0) {
+            for (int i = 0; i < flats.length - 1; i++) {
+                tmp[i] = flats[i + 1];
             }
-        }
-        else
-        {
-            for(int i = 0; i < number; i++) {
+        } else {
+            for (int i = 0; i < number; i++) {
                 tmp[i] = flats[i];
             }
-            for(int i = number; i < tmp.length; i++) {
-                tmp[i] = flats[i+1];
+            for (int i = number; i < tmp.length; i++) {
+                tmp[i] = flats[i + 1];
             }
         }
         flats = tmp;
-    }
+    }*/
 
-    public Flat getBestSpace()			//наибольшая кватира по площади на этаже
+    public Flat getBestSpace()            //наибольшая кватира по площади на этаже
     {
         Flat maxspace = flats[0];
-        for (int i = 1; i<flats.length; i++)
-        {
+        for (int i = 0; i < size; i++) {
             if (maxspace.getSpace() < flats[i].getSpace())
                 maxspace = flats[i];
         }
