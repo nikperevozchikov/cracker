@@ -10,7 +10,7 @@ public class DwellingFloor {
 
     }
 
-    public DwellingFloor(Flat[] fla) {
+    public DwellingFloor(Flat[] fla) { //todo имя параметра лучше согласовывать с именем поля. То есть не "fla", а "flats". А для доступа к полю используй this.flats
         flats = new Flat[fla.length];
         for (int i = 0; i < fla.length; i++) {
             if (fla[i] != null) {
@@ -19,12 +19,12 @@ public class DwellingFloor {
             }
         }
     }
-
+    //todo имя - смотри сообщение в VK
     public int getSize()                  //количество квартир на этаже
     {
         return size;
     }
-
+    //todo имя - смотри сообщение в VK
     public float getSpace()                    //общая площадь квартир этажа
     {
         float allspace = 0;
@@ -33,7 +33,7 @@ public class DwellingFloor {
         }
         return allspace;
     }
-
+     //todo зачем сокращать имена? Среда разработки дополнит имя при вызове этого метода. Пиши полностью roomsCountTotal
     public int getCntRooms()                //общее количество комнат этажа
     {
         int allrooms = flats[0].getRoomsCount();
@@ -57,16 +57,18 @@ public class DwellingFloor {
     {
         flats[number] = flat;
     }
-
+    //todo expandFlats ну емае =))))
     private Flat[] doubleLengthFlats() {
+        //todo НЕЕЕЕЕЕЕЕТТТТТТТТ НИКОГДА НЕ ИСПОЛЬЗУЙ ТРАНСЛИТ!!!!!!!!!
         Flat[] newmassiv = new Flat[flats.length * 2];
+        //todo вот в методе add использовал System.arraycopy, а че здесь - стремно было? =))))))
         for (int i = 0; i < flats.length; i++) {
             newmassiv[i] = flats[i];
         }
         return newmassiv;
 
     }
-
+//todo зачем префикс f в имени параметра?
     public void addFlat(int number, Flat fFlat) {
         if (number > 0 && number < size) {
             if (size == flats.length) {

@@ -8,10 +8,10 @@ public class Dwelling {
     public Dwelling(int countFloors, int[] countFlats) {
         if (countFloors == countFlats.length) {
             floors = new DwellingFloor[countFloors];
-
+            //todo а где инициализация каждого этажа с помощью конструктора, принимающего число квартир?
         }
     }
-
+    //todo имя параметра лучше согласовывать с именем поля. Для доступак атрибуту используй this.
     public Dwelling(DwellingFloor[] dfloors) {
         floors = new DwellingFloor[dfloors.length];
         for (int i = 0; i < floors.length; i++) {
@@ -21,12 +21,12 @@ public class Dwelling {
             }
         }
     }
-
+    //todo вот в DwellingFloor был метод getSize() - а здесь то почему  getCountFloors? =)))))
     public int getCountFloors()        //общее количество этажей дома
     {
         return size;
     }
-
+    //todo имя - смотри сообщение в VK
     public int getAllFlatsCount()   // общее количество квартир дома
     {
         int allcountflats = 0;
@@ -35,7 +35,7 @@ public class Dwelling {
         }
         return allcountflats;
     }
-
+    //todo имя - смотри сообщение в VK
     public float getAllFlatsSpace() // общая площадь квартир дома
     {
         float allcountflatsspace = 0;
@@ -44,7 +44,7 @@ public class Dwelling {
         }
         return allcountflatsspace;
     }
-
+    //todo имя - смотри сообщение в VK
     public int getAllRooms()    //общее количество комнат дома
     {
         int allcountrooms = 0;
@@ -163,12 +163,13 @@ public class Dwelling {
     {
         Flat maxmaxspace = floors[0].getBestSpace();
         for (int i = 0; i < size; i++) {
+            //todo 2 раза вызываешь floors[i].getBestSpace(), инициализируя 2 раза поиск bestSpace на одном и том же этаже. Блин ну вызови один раз и полученную ссылку запомни в переменную...
             if (maxmaxspace.getSpace() < floors[i].getBestSpace().getSpace())
                 maxmaxspace = floors[i].getBestSpace();
         }
         return maxmaxspace;
     }
-
+    //todo имя - смотри сообщение в VK
     public Flat[] getSortFlat() {
         Flat tmp[] = new Flat[getAllFlatsCount()];
         int index=0;

@@ -2,13 +2,12 @@ package buildings;
 
 public class Flat {
     private float space;
-    private int roomsCount; //todo roomsСount более полно отражает суть
+    private int roomsCount;
     private static final float DEFAULT_SPACE = 50;
     private static final int DEFAULT_ROOMSCOUNT = 2;
 
-    //todo не нужно доблировать код в конструкторах. Стандартное правило - конструктор с меньшим числом параметров вызывает конструктор с большим числом параметров
     public Flat() {
-        this(DEFAULT_ROOMSCOUNT, DEFAULT_SPACE); //todo литералы в коде - отстой. Вынеси 50 и 2 в константы класса и дай им нормальные имена.
+        this(DEFAULT_ROOMSCOUNT, DEFAULT_SPACE);
 
     }
 
