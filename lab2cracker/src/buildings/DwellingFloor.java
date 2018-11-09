@@ -10,11 +10,11 @@ public class DwellingFloor {
 
     }
 
-    public DwellingFloor(Flat[] fla) { //todo имя параметра лучше согласовывать с именем поля. То есть не "fla", а "flats". А для доступа к полю используй this.flats
-        flats = new Flat[fla.length];
-        for (int i = 0; i < fla.length; i++) {
-            if (fla[i] != null) {
-                flats[size] = fla[i];
+    public DwellingFloor(Flat[] flats) { //todo имя параметра лучше согласовывать с именем поля. То есть не "fla", а "flats". А для доступа к полю используй this.flats
+        this.flats = new Flat[flats.length];
+        for (int i = 0; i < flats.length; i++) {
+            if (flats[i] != null) {
+                this.flats[size] = flats[i];
                 size++;
             }
         }
@@ -25,22 +25,22 @@ public class DwellingFloor {
         return size;
     }
     //todo имя - смотри сообщение в VK
-    public float getSpace()                    //общая площадь квартир этажа
+    public float totalSpace()                    //общая площадь квартир этажа
     {
-        float allspace = 0;
-        for (int i = 0; i < size; i++) {
-            allspace += flats[i].getSpace();
-        }
-        return allspace;
+        float sum4 = 0;
+        for (int i = 0; i < size; i++)
+            sum4 += flats[i].getSpace();
+
+        return sum4;
     }
      //todo зачем сокращать имена? Среда разработки дополнит имя при вызове этого метода. Пиши полностью roomsCountTotal
-    public int getCntRooms()                //общее количество комнат этажа
+    public int roomsCountTotal()                //общее количество комнат этажа
     {
-        int allrooms = flats[0].getRoomsCount();
+        int sum5 = flats[0].getRoomsCount();
         for (int i = 1; i < size; i++) {
-            allrooms += flats[i].getRoomsCount();
+            sum5 += flats[i].getRoomsCount();
         }
-        return allrooms;
+        return sum5;
     }
 
     public Flat[] getFlats()                //метод получения массива квартир этажа
@@ -53,29 +53,31 @@ public class DwellingFloor {
         return flats[number];
     }
 
-    public void setFlat(int number, Flat flat)        //метод изменения квартиры по ее номеру на этаже
+    public void setFlat(int number, Flat newFlat)        //метод изменения квартиры по ее номеру на этаже
     {
-        flats[number] = flat;
+        flats[number] = newFlat;
     }
     //todo expandFlats ну емае =))))
-    private Flat[] doubleLengthFlats() {
+    private Flat[] expandFlats() {
         //todo НЕЕЕЕЕЕЕЕТТТТТТТТ НИКОГДА НЕ ИСПОЛЬЗУЙ ТРАНСЛИТ!!!!!!!!!
-        Flat[] newmassiv = new Flat[flats.length * 2];
+        Flat[] newFlats = new Flat[flats.length * 2];
         //todo вот в методе add использовал System.arraycopy, а че здесь - стремно было? =))))))
-        for (int i = 0; i < flats.length; i++) {
-            newmassiv[i] = flats[i];
-        }
-        return newmassiv;
+        System.arraycopy(flats, 0, newFlats, 0, flats.length);
+        //for (int i = 0; i < flats.length; i++ ) {
+          //  newFlats[i] = flats[i];
+        //}
+        return newFlats;
 
     }
+
 //todo зачем префикс f в имени параметра?
-    public void addFlat(int number, Flat fFlat) {
+    public void addFlat(int number, Flat Flat) {
         if (number > 0 && number < size) {
             if (size == flats.length) {
-                flats = doubleLengthFlats();
+                flats = expandFlats();
             }
             System.arraycopy(flats, number, flats, number + 1, size - number);
-            flats[number] = fFlat;
+            flats[number] = Flat;
             size++;
         }
     }

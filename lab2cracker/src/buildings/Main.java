@@ -14,8 +14,8 @@ public class Main {
         DwellingFloor floor = new DwellingFloor(flats);
         floor.addFlat(0, new Flat());
         floor.addFlat(1, new Flat());
-        System.out.println(floor.getSpace());
-        System.out.println(floor.getCntRooms());
+       System.out.println(floor.totalSpace());
+        System.out.println(floor.roomsCountTotal());
         Flat[] flatss = new Flat[3];
         flatss[0] = new Flat(1, 20);
         flatss[1] = new Flat(2, 60);
@@ -27,9 +27,9 @@ public class Main {
         Dwelling dwelling = new Dwelling(floors);
         dwelling.addFlat(5, new Flat(4, 160));
         dwelling.delFlat(3);
-        System.out.println(dwelling.getAllFlatsCount());
-        System.out.println(dwelling.getAllRooms());
-        System.out.println(dwelling.getAllFlatsSpace());
+        System.out.println(dwelling.FlatsCountTotal());
+        System.out.println(dwelling.roomsCountTotal());
+        System.out.println(dwelling.totalSpace());
 
         System.out.println(dwelling.getBestSpace());
 
@@ -37,7 +37,7 @@ public class Main {
         System.out.println(floor.getBestSpace());
 
         System.out.println(dwelling.getFlat(3));
-        Flat[] flatsss = dwelling.getSortFlat();
+        Flat[] flatsss = dwelling.SortFlat();
         for (int i = 0; i < flatsss.length; i++)
             System.out.println(flatsss[i]);
 

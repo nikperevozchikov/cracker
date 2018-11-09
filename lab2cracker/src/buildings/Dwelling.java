@@ -8,50 +8,54 @@ public class Dwelling {
     public Dwelling(int countFloors, int[] countFlats) {
         if (countFloors == countFlats.length) {
             floors = new DwellingFloor[countFloors];
+            for (int i = 0; i < floors.length; i++) {
+                floors[i] = new DwellingFloor(countFlats[i]);
+            }
+
             //todo а где инициализация каждого этажа с помощью конструктора, принимающего число квартир?
         }
     }
     //todo имя параметра лучше согласовывать с именем поля. Для доступак атрибуту используй this.
-    public Dwelling(DwellingFloor[] dfloors) {
-        floors = new DwellingFloor[dfloors.length];
+    public Dwelling(DwellingFloor[] floors) {
+        this.floors = new DwellingFloor[floors.length];
         for (int i = 0; i < floors.length; i++) {
-            if (dfloors[i] != null) {
-                floors[size] = dfloors[i];
+            if (floors[i] != null) {
+                this.floors[size] = floors[i];
                 size++;
             }
         }
     }
     //todo вот в DwellingFloor был метод getSize() - а здесь то почему  getCountFloors? =)))))
-    public int getCountFloors()        //общее количество этажей дома
+    public int getSize()        //общее количество этажей дома
     {
         return size;
     }
     //todo имя - смотри сообщение в VK
-    public int getAllFlatsCount()   // общее количество квартир дома
+    public int FlatsCountTotal()   // общее количество квартир дома
     {
-        int allcountflats = 0;
+        int sum1 = 0;
         for (int i = 0; i < size; i++) {
-            allcountflats += floors[i].getSize();
+            sum1 += floors[i].getSize();
         }
-        return allcountflats;
+        return sum1;
     }
     //todo имя - смотри сообщение в VK
-    public float getAllFlatsSpace() // общая площадь квартир дома
+    public float totalSpace() // общая площадь квартир дома
     {
-        float allcountflatsspace = 0;
+        float sum2 = 0;
         for (int i = 0; i < size; i++) {
-            allcountflatsspace += floors[i].getSpace();
+            sum2 += floors[i].totalSpace();
         }
-        return allcountflatsspace;
+        return sum2;
     }
     //todo имя - смотри сообщение в VK
-    public int getAllRooms()    //общее количество комнат дома
+    public int roomsCountTotal()    //общее количество комнат дома
     {
-        int allcountrooms = 0;
+        int sum3 = 0;
         for (int i = 0; i < size; i++) {
-            allcountrooms += floors[i].getCntRooms();
+           sum3 += floors[i].roomsCountTotal();
         }
-        return allcountrooms;
+        return sum3;
     }
 
     public DwellingFloor[] getFloors()  //получение массива этажей дома
@@ -164,14 +168,15 @@ public class Dwelling {
         Flat maxmaxspace = floors[0].getBestSpace();
         for (int i = 0; i < size; i++) {
             //todo 2 раза вызываешь floors[i].getBestSpace(), инициализируя 2 раза поиск bestSpace на одном и том же этаже. Блин ну вызови один раз и полученную ссылку запомни в переменную...
-            if (maxmaxspace.getSpace() < floors[i].getBestSpace().getSpace())
-                maxmaxspace = floors[i].getBestSpace();
+            Flat fl = floors[i].getBestSpace();
+            if (maxmaxspace.getSpace() < fl.getSpace())
+                maxmaxspace = fl;
         }
         return maxmaxspace;
     }
     //todo имя - смотри сообщение в VK
-    public Flat[] getSortFlat() {
-        Flat tmp[] = new Flat[getAllFlatsCount()];
+    public Flat[] SortFlat() {
+        Flat tmp[] = new Flat[FlatsCountTotal()];
         int index=0;
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < floors[i].getSize(); j++) {
