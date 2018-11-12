@@ -10,7 +10,7 @@ public class DwellingFloor {
 
     }
 
-    public DwellingFloor(Flat[] flats) { //todo имя параметра лучше согласовывать с именем поля. То есть не "fla", а "flats". А для доступа к полю используй this.flats
+    public DwellingFloor(Flat[] flats) {
         this.flats = new Flat[flats.length];
         for (int i = 0; i < flats.length; i++) {
             if (flats[i] != null) {
@@ -19,24 +19,21 @@ public class DwellingFloor {
             }
         }
     }
-    //todo имя - смотри сообщение в VK
     public int getSize()                  //количество квартир на этаже
     {
         return size;
     }
-    //todo имя - смотри сообщение в VK
     public float totalSpace()                    //общая площадь квартир этажа
     {
-        float sum4 = 0;
+        float sum4 = 0; //todo имя локальной переменной, значение которой возвращается в качестве результата работы функции обычно такое-же как имя функции
         for (int i = 0; i < size; i++)
             sum4 += flats[i].getSpace();
 
         return sum4;
     }
-     //todo зачем сокращать имена? Среда разработки дополнит имя при вызове этого метода. Пиши полностью roomsCountTotal
     public int roomsCountTotal()                //общее количество комнат этажа
     {
-        int sum5 = flats[0].getRoomsCount();
+        int sum5 = flats[0].getRoomsCount(); //todo имя локальной переменной, значение которой возвращается в качестве результата работы функции обычно такое-же как имя функции
         for (int i = 1; i < size; i++) {
             sum5 += flats[i].getRoomsCount();
         }
@@ -57,11 +54,8 @@ public class DwellingFloor {
     {
         flats[number] = newFlat;
     }
-    //todo expandFlats ну емае =))))
     private Flat[] expandFlats() {
-        //todo НЕЕЕЕЕЕЕЕТТТТТТТТ НИКОГДА НЕ ИСПОЛЬЗУЙ ТРАНСЛИТ!!!!!!!!!
         Flat[] newFlats = new Flat[flats.length * 2];
-        //todo вот в методе add использовал System.arraycopy, а че здесь - стремно было? =))))))
         System.arraycopy(flats, 0, newFlats, 0, flats.length);
         //for (int i = 0; i < flats.length; i++ ) {
           //  newFlats[i] = flats[i];
@@ -70,7 +64,6 @@ public class DwellingFloor {
 
     }
 
-//todo зачем префикс f в имени параметра?
     public void addFlat(int number, Flat Flat) {
         if (number > 0 && number < size) {
             if (size == flats.length) {
@@ -141,7 +134,7 @@ public class DwellingFloor {
 
     public Flat getBestSpace()            //наибольшая кватира по площади на этаже
     {
-        Flat maxspace = flats[0];
+        Flat maxspace = flats[0]; //todo имя локальной переменной, значение которой возвращается в качестве результата работы функции обычно такое-же как имя функции
         for (int i = 0; i < size; i++) {
             if (maxspace.getSpace() < flats[i].getSpace())
                 maxspace = flats[i];

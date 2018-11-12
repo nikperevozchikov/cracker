@@ -11,11 +11,8 @@ public class Dwelling {
             for (int i = 0; i < floors.length; i++) {
                 floors[i] = new DwellingFloor(countFlats[i]);
             }
-
-            //todo а где инициализация каждого этажа с помощью конструктора, принимающего число квартир?
         }
     }
-    //todo имя параметра лучше согласовывать с именем поля. Для доступак атрибуту используй this.
     public Dwelling(DwellingFloor[] floors) {
         this.floors = new DwellingFloor[floors.length];
         for (int i = 0; i < floors.length; i++) {
@@ -25,13 +22,11 @@ public class Dwelling {
             }
         }
     }
-    //todo вот в DwellingFloor был метод getSize() - а здесь то почему  getCountFloors? =)))))
     public int getSize()        //общее количество этажей дома
     {
         return size;
     }
-    //todo имя - смотри сообщение в VK
-    public int FlatsCountTotal()   // общее количество квартир дома
+    public int flatsCountTotal()   // общее количество квартир дома
     {
         int sum1 = 0;
         for (int i = 0; i < size; i++) {
@@ -39,19 +34,17 @@ public class Dwelling {
         }
         return sum1;
     }
-    //todo имя - смотри сообщение в VK
     public float totalSpace() // общая площадь квартир дома
     {
-        float sum2 = 0;
+        float sum2 = 0; //todo имя локальной переменной, значение которой возвращается в качестве результата работы функции обычно такое-же как имя функции
         for (int i = 0; i < size; i++) {
             sum2 += floors[i].totalSpace();
         }
         return sum2;
     }
-    //todo имя - смотри сообщение в VK
     public int roomsCountTotal()    //общее количество комнат дома
     {
-        int sum3 = 0;
+        int sum3 = 0; //todo имя локальной переменной, значение которой возвращается в качестве результата работы функции обычно такое-же как имя функции
         for (int i = 0; i < size; i++) {
            sum3 += floors[i].roomsCountTotal();
         }
@@ -165,18 +158,16 @@ public class Dwelling {
 
     public Flat getBestSpace()                    //самая большая площадь по всему дому
     {
-        Flat maxmaxspace = floors[0].getBestSpace();
+        Flat maxmaxspace = floors[0].getBestSpace(); //todo имя локальной переменной, значение которой возвращается в качестве результата работы функции обычно такое-же как имя функции
         for (int i = 0; i < size; i++) {
-            //todo 2 раза вызываешь floors[i].getBestSpace(), инициализируя 2 раза поиск bestSpace на одном и том же этаже. Блин ну вызови один раз и полученную ссылку запомни в переменную...
-            Flat fl = floors[i].getBestSpace();
+            Flat fl = floors[i].getBestSpace(); //todo не fl а currentBestSpace
             if (maxmaxspace.getSpace() < fl.getSpace())
                 maxmaxspace = fl;
         }
         return maxmaxspace;
     }
-    //todo имя - смотри сообщение в VK
     public Flat[] SortFlat() {
-        Flat tmp[] = new Flat[FlatsCountTotal()];
+        Flat tmp[] = new Flat[flatsCountTotal()]; //todo не tmp а flats
         int index=0;
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < floors[i].getSize(); j++) {
